@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ch15_03_cust_reg"
         mc:Ignorable="d"
         Icon="https://cdn1.iconfinder.com/data/icons/CrystalClear/128x128/kdm/user_male.png"
-        Title="고객등록" Height="450" Width="350"
+        Title="고객등록" Height="350" Width="350"
         FocusManager.FocusedElement="{Binding ElementName=txtName}">
     <!-- Window에 FocusManager.FocusedElement로 화면시작시 포커스를 줄수 있다.-->
 
@@ -17,6 +17,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -49,22 +52,67 @@
                 <Label Content="전화번호(_T):" Target="{Binding ElementName=txtTel}"/>
             </StackPanel>
         </Border>
-        <TextBox x:Name="txtTel"  Grid.Row="1" Grid.Column="1" ToolTip="핸드폰번호를 넣어주세요."/>
+
+        <TextBox x:Name="txtTel"  Grid.Row="1" Grid.Column="1">
+            <TextBox.ToolTip>
+                <TextBlock>
+                    <Italic Foreground="Red">예) </Italic> 010-2839-6011
+                </TextBlock>
+            </TextBox.ToolTip>
+        </TextBox>
 
         <Border Grid.Row="2" Grid.Column="0" BorderBrush="#ff4fafaf" BorderThickness="1" Background="#af7fefef">
             <Label Target="{Binding ElementName=txtSex}">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="https://cdn2.iconfinder.com/data/icons/sem_labs_icon_pack/icons/users_mixed_gender.png"
                    Width="16" Height="16"/>
-                    <AccessText>성별(_S):</AccessText>
+                    <AccessText>성별(_E):</AccessText>
                 </StackPanel>
             </Label>
         </Border>
         <TextBox x:Name="txtSex" Grid.Row="2" Grid.Column="1" />
 
-        <Label Grid.Row="3" Grid.Column="0" Content="비고(_M):" Target="{Binding ElementName=txtMemo}"/>
-        <TextBox x:Name="txtMemo" Grid.Row="3" Grid.Column="1" Height="100" AcceptsReturn="True" AcceptsTab="True"
-                 VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"/>
+        <!-- 체크박스 -->
+
+        <Label Grid.Row="3" Grid.Column="0" Content="관심분야(_I):" Target="{Binding ElementName=txtSex}"/>
+        <WrapPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
+            <CheckBox Content="영화" Margin="10,2"/>
+            <CheckBox Content="독서" Margin="10,2"/>
+            <CheckBox Content="세미나" Margin="10,2"/>
+            <CheckBox Content="여행" Margin="10,2"/>
+        </WrapPanel>
         
+        <!-- 라디오박스1 -->
+
+        <Label Grid.Row="4" Grid.Column="0" Content="직업"></Label>
+        <WrapPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="12,0">
+            <RadioButton Content="학생" GroupName="gn_job"/>
+            <RadioButton Content="주부" GroupName="gn_job"/>
+            <RadioButton Content="직장인" GroupName="gn_job" IsChecked="True"/>
+            <RadioButton Content="기타" GroupName="gn_job"/>
+        </WrapPanel>
+        
+        <!-- 라디오박스2 -->
+
+        <Label Grid.Row="5" Grid.Column="0" Content="결제수단"></Label>
+        <WrapPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Margin="12,0">
+            <RadioButton Content="현금" GroupName="gn_pay" IsChecked="True"/>
+            <RadioButton Content="카드" GroupName="gn_pay"/>
+            <RadioButton Content="핸드폰" GroupName="gn_pay" />
+        </WrapPanel>
+
+        <Label Grid.Row="6" Grid.Column="0" Content="비고(_M):" Target="{Binding ElementName=txtMemo}"/>
+        <TextBox x:Name="txtMemo" Grid.Row="6" Grid.Column="1" Height="100" AcceptsReturn="True" AcceptsTab="True"
+                 VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"/>
+
+        <Grid Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnSave" Click="btnSave_Click" Grid.Row="0" Grid.Column="1" Content="저장(_S)" Margin="10,2,0,2"/>
+            <Button x:Name="btnCancel" Click="btnCancel_Click" Grid.Row="0" Grid.Column="2" Content="취소(_C)" Margin="10,2,0,2"/>
+        </Grid>
     </Grid>
 </Window>

@@ -24,5 +24,15 @@ namespace ch15_03_cust_reg
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Save버튼을 눌렀습니다");
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("취소버튼을 눌렀습니다.");
+        }
     }
 }
