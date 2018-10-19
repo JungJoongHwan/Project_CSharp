@@ -1,0 +1,22 @@
+﻿<Window x:Class="ch20_15_textFormattingMode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch20_15_textFormattingMode"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="500">
+    <Viewbox>
+        <StackPanel>
+            <Label TextOptions.TextFormattingMode="Ideal" FontSize="4">대한민국</Label>  <!-- 백터방식: 작으면 흐려진다. -->
+            <Label TextOptions.TextFormattingMode="Display" FontSize="4">대한민국</Label> <!-- 래스터? 픽셀방삭: 작아도 찐하다 -->
+            <Label TextOptions.TextFormattingMode="Ideal" FontSize="50">대한민국</Label>
+            <Label TextOptions.TextFormattingMode="Display" FontSize="50">대한민국</Label>
+
+            <Label TextOptions.TextRenderingMode="Auto" FontSize="50">대한민국</Label>
+            <Label TextOptions.TextRenderingMode="Aliased" FontSize="50">대한민국</Label>
+            <Label TextOptions.TextRenderingMode="ClearType" FontSize="50">대한민국</Label>
+            <Label TextOptions.TextRenderingMode="Grayscale" FontSize="50">대한민국</Label>
+        </StackPanel>
+    </Viewbox>
+</Window>

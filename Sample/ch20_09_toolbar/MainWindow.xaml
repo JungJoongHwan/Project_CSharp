@@ -1,0 +1,33 @@
+﻿<Window x:Class="ch20_09_toolbar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch20_09_toolbar"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="400">
+    <DockPanel Margin="10">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="파일"/>
+            <MenuItem Header="편집"/>
+            <MenuItem Header="보기"/>
+        </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <Image x:Name="tbTools" Source="https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/98-512.png" Width="16" Height="16"
+                   MouseDown="tbTools_MouseDown"/>
+            <Button x:Name="btnPlay" Margin="1" Click="btnPlay_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_65-512.png" Width="16" Height="16"/>
+                        <TextBlock Margin="4,0,0,0">버튼1</TextBlock>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+            <Button Content="버튼2" Margin="1"/>
+            <Button Content="버튼3" Margin="1"/>
+        </ToolBar>
+        <Canvas>
+            
+        </Canvas>
+    </DockPanel>
+</Window>

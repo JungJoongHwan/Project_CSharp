@@ -1,0 +1,26 @@
+﻿<Window x:Class="ch20_14_webBrowser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch20_14_webBrowser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="top" HorizontalContentAlignment="Stretch">
+            <Grid Width="500">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="이전"/>
+                <Button Grid.Column="1" Content="이후"/>
+                <TextBox x:Name="txtUrl" Grid.Column="2" KeyUp="txtUrl_KeyUp"/>
+                <Button Grid.Column="3" Content="실행"/>
+            </Grid>
+        </ToolBar>
+        <WebBrowser x:Name="wb"/>
+    </DockPanel>
+</Window>

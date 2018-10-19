@@ -1,0 +1,22 @@
+﻿<Window x:Class="ch20_13_progressbar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch20_13_progressbar"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <Grid>
+                <!-- 프로그래스바속성중 IsIndeterminate="True" 로 놓으면 작동중을 나타낸다. 이때는 자동증가등이 안된다. -->
+                <ProgressBar x:Name="pb" Width="200" VerticalAlignment="Center" Height="30" Minimum="0" Maximum="100" Value="30" />
+                <!-- 프로그래스바에 %표시를 아래와 같이 프로그래스바 위에 TextBlock를 올린다  -->
+                <TextBlock Text="{Binding ElementName=pb,Path=Value,StringFormat={}{0:0}%}" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+            <Button x:Name="btnAdd" Content="증가" Margin="10" Width="100" Click="btnAdd_Click"/>
+            <Button x:Name="btnAutoAdd" Content="자동증가" Margin="10" Width="100" Click="btnAutoAdd_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

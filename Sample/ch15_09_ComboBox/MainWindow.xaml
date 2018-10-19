@@ -1,0 +1,29 @@
+﻿<Window x:Class="ch15_09_ComboBox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch15_09_ComboBox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="300
+        ">
+    <StackPanel>
+        <ComboBox>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn4.iconfinder.com/data/icons/SOPHISTIQUENIGHT/mail_icons/png/400/virus_definitions.png" 
+                           Width="16" Height="16"/>
+                    <TextBlock VerticalAlignment="Center">디버그</TextBlock> 
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="https://cdn4.iconfinder.com/data/icons/VISTA/project_managment/png/400/release_lock.png"
+                           Width="16" Height="16"/>
+                    <TextBlock VerticalAlignment="Center">릴리즈</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>구성관리자...</ComboBoxItem>
+        </ComboBox>
+    </StackPanel>
+</Window>

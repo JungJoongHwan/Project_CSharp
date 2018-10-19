@@ -1,0 +1,40 @@
+﻿<Window x:Class="ch20_08_contextMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch20_08_contextMenu"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Window.Resources>
+        <ContextMenu x:Key="mnuCvs">
+            <MenuItem x:Name="mnuCvs_Menu01" Header="메뉴 #1" Click="mnuCvs_Menu01_Click">
+                <MenuItem.Icon>
+                    <Image Source="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-12-512.png"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem x:Name="mnuCvs_Menu02" Header="메뉴 #2" Click="mnuCvs_Menu02_Click"/>
+            <Separator/>
+            <MenuItem x:Name="mnuCvs_Menu03" Header="메뉴 #3" Click="mnuCvs_Menu03_Click"/>
+        </ContextMenu>
+    </Window.Resources>
+    <Grid>
+        <Canvas Width="200" Height="100" Background="Yellow" MouseRightButtonDown="Canvas_MouseRightButtonDown">
+            <!--<Canvas.ContextMenu>
+                <ContextMenu x:Name="mnuCvs">
+                    <MenuItem x:Name="mnuCvs_Menu01" Header="메뉴 #1" Click="mnuCvs_Menu01_Click">
+                        <MenuItem.Icon>
+                            <Image Source="https://cdn4.iconfinder.com/data/icons/famous-character-vol-2-flat/48/Avatar_Famous_Characters-12-512.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="mnuCvs_Menu02" Header="메뉴 #2" Click="mnuCvs_Menu02_Click"/>
+                    <Separator/>
+                    <MenuItem x:Name="mnuCvs_Menu03" Header="메뉴 #3" Click="mnuCvs_Menu03_Click"/>
+                </ContextMenu>
+            </Canvas.ContextMenu>-->
+        </Canvas>
+        
+        <Button x:Name="btnCvsContextMenu" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="30" Content="메뉴호출" 
+                Click="btnCvsContextMenu_Click"/>
+    </Grid>
+</Window>
